@@ -101,11 +101,14 @@ DELETE = f'''
 <p class="note"><b>Have NutriHealth Plus?</b> Deleting your account doesn&rsquo;t cancel your subscription. Cancel it first in Google Play &rarr; Payments &amp; subscriptions &rarr; Subscriptions.</p>
 '''
 
+INVITE = open(os.path.join(HERE, 'content', 'invite.html'), encoding='utf-8').read().replace('{MARK}', MARK)
+
 PAGES = {
     'index.html': ('/', 'NutriHealth', 'NutriHealth: snap your meal, know what you ate. A calorie and nutrition tracker for Android.', HOME),
     'privacy/index.html': ('/privacy/', 'Privacy Policy · NutriHealth', 'How NutriHealth collects, uses and protects your data.', PRIVACY),
     'terms/index.html': ('/terms/', 'Terms of Service · NutriHealth', 'The terms for using NutriHealth and NutriHealth Plus.', TERMS),
     'health-data/index.html': ('/health-data/', 'Consumer Health Data Privacy Policy · NutriHealth', "How NutriHealth handles consumer health data, including under Washington's My Health My Data Act.", HEALTH),
+    'invite/index.html': ('/invite/', 'You’re invited · NutriHealth', 'Join NutriHealth with a friend’s code and you both get a month of Plus free.', INVITE),
     'delete-account/index.html': ('/delete-account/', 'Delete your account · NutriHealth', 'How to delete your NutriHealth account and data.', DELETE),
 }
 

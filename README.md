@@ -9,6 +9,7 @@ The public website for the NutriHealth Android app: **https://nutrihealthai.app*
 | Terms of Service | `/terms/` | The app (sign-up, paywall, Profile) |
 | Consumer Health Data Privacy Policy | `/health-data/` | Washington / Nevada / Connecticut health-data laws |
 | Delete your account | `/delete-account/` | Play Console → Data safety → Data deletion |
+| Invite | `/invite/?code=…` | The app's Share invite link (refer a friend) |
 
 Static HTML and CSS only: no build step on the host, no analytics, no cookies.
 

@@ -1,0 +1,18 @@
+<section class="hero">
+{MARK}
+<h1>You&rsquo;re invited to NutriHealth</h1>
+<p class="lead">Install the app and enter this code when you sign up. Log meals on 3 days and you and your friend each get a month of NutriHealth Plus free.</p>
+<div class="invite-code" id="invite-code" aria-live="polite">&mdash;</div>
+<p><a class="badge" href="https://play.google.com/store/apps/details?id=com.nutrihealth.app">Get it on Google Play</a></p>
+<p class="meta">Signed up with Google? Add the code in Profile &rarr; Invite friends within 14 days. <a href="/terms/#referrals">Referral terms</a></p>
+</section>
+<script>
+  // Shows the code from ?code=…; only 6 letters/digits are accepted, never anything else.
+  (function () {
+    var raw = new URLSearchParams(location.search).get('code') || '';
+    var code = raw.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 6);
+    var el = document.getElementById('invite-code');
+    if (code.length === 6) el.textContent = code;
+    else el.textContent = 'Ask your friend for their code';
+  })();
+</script>
