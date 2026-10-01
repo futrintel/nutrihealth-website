@@ -12,6 +12,10 @@ The public website for the NutriHealth Android app: **https://nutrihealthai.app*
 
 Static HTML and CSS only: no build step on the host, no analytics, no cookies.
 
+**Search indexing is off for now:** every page carries `noindex` (`INDEXABLE = False` in
+`build.py`). To go public in search, set it to `True`, rebuild, add a sitemap, switch Cloudflare's
+AI Crawl Control to `search=yes`, and submit the sitemap in Google Search Console.
+
 ## Editing
 
 1. Policy text lives in `content/` (`privacy.html`, `terms.html`, `health-data.html`); the home and

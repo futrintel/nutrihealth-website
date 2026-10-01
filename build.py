@@ -7,6 +7,10 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, 'public')
 EFFECTIVE = 'September 30, 2026'
 CONTACT = 'support@nutrihealthai.app'
+# False keeps every page out of search results (noindex) while staying open to visitors and to
+# Google Play's reviewers. Set True when the site should appear in Google, then submit a sitemap.
+INDEXABLE = False
+ROBOTS_META = '' if INDEXABLE else '\n<meta name="robots" content="noindex">'
 
 MARK = '''<svg viewBox="0 0 1000 1000" aria-hidden="true"><g fill="none" stroke="#679459" stroke-width="72" stroke-linecap="round"><path d="M57,236 V142 A88,88 0 0 1 145,54 H244"/><path d="M943,236 V142 A88,88 0 0 0 855,54 H756"/><path d="M57,764 V858 A88,88 0 0 0 145,946 H244"/><path d="M943,764 V858 A88,88 0 0 1 855,946 H756"/></g><path d="M748,756 A356,356 0 1 1 842,412" fill="none" stroke="#1F5150" stroke-width="64"/><g fill="#1F5150"><rect x="633" y="590" width="65" height="130" rx="32.5"/><rect x="733" y="517" width="65" height="203" rx="32.5"/><rect x="830" y="437" width="65" height="280" rx="32.5"/></g><path fill="#679459" fill-rule="evenodd" d="M645,296 C585,330 470,352 400,410 C330,468 305,560 322,640 C330,680 343,700 358,716 L408,730 C505,715 600,650 632,540 C655,460 655,360 645,296 Z M528,466 C470,505 395,590 360,716 L407,729 C415,640 460,540 528,466 Z"/></svg>'''
 
@@ -25,7 +29,7 @@ def page(path, title, description, body):
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
-<meta name="description" content="{description}">
+<meta name="description" content="{description}">{ROBOTS_META}
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap">
