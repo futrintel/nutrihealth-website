@@ -44,7 +44,7 @@ def page(path, title, description, body):
 </div></main>
 <footer class="site"><div class="wrap">
 <nav class="legal" aria-label="Legal">{links}</nav>
-<span><a href="mailto:{CONTACT}">{CONTACT}</a> &middot; &copy; 2026 NutriHealth &middot; Ontario, Canada</span>
+<span><a href="mailto:{CONTACT}">{CONTACT}</a> &middot; &copy; 2026 NutriHealth</span>
 </div></footer>
 </body>
 </html>
