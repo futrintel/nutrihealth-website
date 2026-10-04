@@ -5,7 +5,7 @@ import os
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, 'public')
-EFFECTIVE = 'October 3, 2026'
+EFFECTIVE = 'October 4, 2026'
 CONTACT = 'support@nutrihealthai.app'
 # False keeps every page out of search results (noindex) while staying open to visitors and to
 # Google Play's reviewers. Set True when the site should appear in Google, then submit a sitemap.
