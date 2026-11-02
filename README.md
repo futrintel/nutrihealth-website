@@ -11,7 +11,10 @@ The public website for the NutriHealth Android app: **https://nutrihealthai.app*
 | Delete your account | `/delete-account/` | Play Console → Data safety → Data deletion |
 | Invite | `/invite/?code=…` | The app's Share invite link (refer a friend) |
 
-Static HTML and CSS only: no build step on the host, no analytics, no cookies.
+Static HTML and CSS, plus one tiny own script on the home page that starts animations as you scroll
+(nothing loads from third parties except the Inter font): no build step on the host, no analytics,
+no cookies. The home page is `content/home.html`; header, footer and the policy pages' contents
+list are in `build.py`.
 
 **Search indexing is off for now:** every page carries `noindex` (`INDEXABLE = False` in
 `build.py`). To go public in search, set it to `True`, rebuild, add a sitemap, switch Cloudflare's
