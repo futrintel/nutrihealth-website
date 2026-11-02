@@ -17,7 +17,7 @@ MARK = '''<svg viewBox="0 0 1000 1000" aria-hidden="true"><g fill="none" stroke=
 
 # Legal links: footer on every page, and the top bar from tablet width up.
 LEGAL = [('/privacy/', 'Privacy Policy'), ('/terms/', 'Terms of Service'), ('/health-data/', 'Consumer Health Data')]
-NAV = [('/privacy/', 'Privacy'), ('/terms/', 'Terms')]
+NAV = []  # the policy links live in the footer; the top bar is the logo (and Get the app on Home)
 PLAY = 'https://play.google.com/store/apps/details?id=com.nutrihealth.app'
 
 REVEAL_JS = '''<script>
@@ -88,6 +88,7 @@ def page(path, title, description, body, kind='plain'):
     )
     if kind == 'home':
         nav += f'<a class="get" href="{PLAY}">Get the app</a>'
+    nav_html = f'<nav class="nav" aria-label="Main">{nav}</nav>' if nav else ''
     legal = ''.join(
         f'<a href="{href}"{" aria-current=\"page\"" if href == path else ""}>{label}</a>' for href, label in LEGAL
     )
@@ -116,9 +117,9 @@ def page(path, title, description, body, kind='plain'):
 {head_js}
 </head>
 <body>
-<header class="site"><div class="bar">
+<header class="site"><div class="hbar">
 <a class="brand" href="/">{MARK}<span>Nutri<b>Health</b></span></a>
-<nav class="nav" aria-label="Main">{nav}</nav>
+{nav_html}
 </div></header>
 {main}
 <footer class="site"><div class="fwrap">

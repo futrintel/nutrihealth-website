@@ -30,8 +30,8 @@ a:focus-visible, button:focus-visible { outline: 2px solid var(--g); outline-off
 .wrap { max-width: 760px; margin: 0 auto; padding-inline: 20px; }
 
 /* ---------- header and footer ---------- */
-header.site { position: sticky; top: 0; z-index: 5; background: rgba(251, 251, 253, .82); -webkit-backdrop-filter: saturate(180%) blur(20px); backdrop-filter: saturate(180%) blur(20px); border-bottom: 1px solid rgba(0, 0, 0, .06); }
-header.site .bar { max-width: 1120px; margin: 0 auto; height: 52px; padding-inline: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+header.site { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid rgba(0, 0, 0, .06); }
+header.site .hbar { max-width: 1120px; margin: 0 auto; height: 52px; padding-inline: 24px; display: flex; align-items: center; justify-content: space-between; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; text-decoration: none; color: var(--teal); font-weight: 700; font-size: 17px; letter-spacing: -0.02em; }
 .brand svg { width: 24px; height: 24px; }
 .brand span b { color: var(--leaf); font-weight: 700; }
