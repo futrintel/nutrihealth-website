@@ -17,7 +17,7 @@ MARK = '''<svg viewBox="0 0 1000 1000" aria-hidden="true"><g fill="none" stroke=
 
 # Legal links: footer on every page, and the top bar from tablet width up.
 LEGAL = [('/privacy/', 'Privacy Policy'), ('/terms/', 'Terms of Service'), ('/health-data/', 'Consumer Health Data')]
-NAV = [('/privacy/', 'Privacy'), ('/terms/', 'Terms'), ('/health-data/', 'Health data')]
+NAV = [('/privacy/', 'Privacy'), ('/terms/', 'Terms')]
 PLAY = 'https://play.google.com/store/apps/details?id=com.nutrihealth.app'
 
 REVEAL_JS = '''<script>
@@ -94,7 +94,7 @@ def page(path, title, description, body, kind='plain'):
     head_js = '<script>document.documentElement.classList.add("js")</script>' if kind == 'home' else ''
     end_js = REVEAL_JS if kind == 'home' else ''
     if kind == 'home':
-        main = f'<main style="padding:0">\n{body}\n</main>'
+        main = f'<main style="padding:0"><div class="h-wrap">\n{body}\n</div></main>'
     elif kind == 'legal':
         body, toc = with_contents(body)
         main = f'<main><div class="legal-wrap">{toc}<article>\n{body}\n</article></div></main>'
@@ -123,7 +123,7 @@ def page(path, title, description, body, kind='plain'):
 {main}
 <footer class="site"><div class="fwrap">
 <div class="fgrid">
-<div><div class="fname">{mark_small}NutriHealth</div><div>Snap your meal. Know what you ate. For Android.</div></div>
+<div><div class="fname">{mark_small}NutriHealth</div><div>Snap your meal. Know what you ate.</div><a class="fbadge" href="{PLAY}"><img src="/img/google-play-badge.png" alt="Get it on Google Play" width="564" height="168"></a></div>
 <div><b>Legal</b>{legal}</div>
 <div><b>Support</b><a href="/delete-account/"{" aria-current=\"page\"" if path == "/delete-account/" else ""}>Delete your account</a><a href="mailto:{CONTACT}">{CONTACT}</a></div>
 </div>
@@ -175,7 +175,7 @@ DELETE = f'''
 INVITE = open(os.path.join(HERE, 'content', 'invite.html'), encoding='utf-8').read().replace('{MARK}', MARK)
 
 PAGES = {
-    'index.html': ('/', 'NutriHealth', 'NutriHealth: snap your meal, know what you ate. A calorie and nutrition tracker for Android.', HOME, 'home'),
+    'index.html': ('/', 'NutriHealth', 'NutriHealth: snap your meal, know what you ate. A calorie and nutrition tracker.', HOME, 'home'),
     'privacy/index.html': ('/privacy/', 'Privacy Policy · NutriHealth', 'How NutriHealth collects, uses and protects your data.', PRIVACY, 'legal'),
     'terms/index.html': ('/terms/', 'Terms of Service · NutriHealth', 'The terms for using NutriHealth and NutriHealth Plus.', TERMS, 'legal'),
     'health-data/index.html': ('/health-data/', 'Consumer Health Data Privacy Policy · NutriHealth', "How NutriHealth handles consumer health data, including under Washington's My Health My Data Act.", HEALTH, 'legal'),
